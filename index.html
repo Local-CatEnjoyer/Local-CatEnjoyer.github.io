@@ -1,106 +1,222 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
     <title>LCE | Local Cat Enjoyer</title>
-
+    <meta name="description" content="LCE — student working in sound design, game audio, music production, programming and game development.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Chakra+Petch:wght@500;600;700&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
 </head>
-
 <body>
 
     <nav>
-        <h2>LCE</h2>
-
-        <div>
+        <a href="#top" class="brand">
+            <!-- minimal cat-face mark: two ears + head outline, no reference to any character -->
+            <svg class="cat-mark" viewBox="0 0 24 24" aria-hidden="true">
+                <path d="M5 3.5 8.5 9h7L19 3.5 17 10.2a7 7 0 1 1-10 0L5 3.5z"/>
+                <circle class="cat-eye" cx="9.6" cy="13.5" r="0.9"/>
+                <circle class="cat-eye" cx="14.4" cy="13.5" r="0.9"/>
+            </svg>
+            LCE
+        </a>
+        <button class="nav-toggle" id="navToggle" aria-label="Open menu" aria-expanded="false" aria-controls="navLinks">
+            <span></span><span></span><span></span>
+        </button>
+        <div class="nav-links" id="navLinks">
             <a href="#about">About</a>
-            <a href="#projects">Projects</a>
+            <a href="#work">Work</a>
+            <a href="#audio">Audio</a>
+            <a href="#tools">Tools</a>
+            <a href="#experiments">Experiments</a>
             <a href="#contact">Contact</a>
+            <button class="theme-toggle" id="themeToggle" aria-label="Switch to light theme">
+                <svg class="icon-moon" viewBox="0 0 24 24" aria-hidden="true"><path d="M21 12.8A9 9 0 1 1 11.2 3a7 7 0 0 0 9.8 9.8z"/></svg>
+                <svg class="icon-sun" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="4.5"/><path d="M12 2v3M12 19v3M4.2 4.2l2.1 2.1M17.7 17.7l2.1 2.1M2 12h3M19 12h3M4.2 19.8l2.1-2.1M17.7 6.3l2.1-2.1"/></svg>
+            </button>
         </div>
     </nav>
 
-
     <main>
 
-        <section class="hero">
+        <!-- HERO -->
+        <section class="hero" id="top">
+            <p class="kicker">LCE — Local Cat Enjoyer</p>
+            <h1>Making worlds<br><span>sound alive.</span></h1>
+            <p class="hero-tags">sound <span class="dot">·</span> code <span class="dot">·</span> games</p>
+            <div class="hero-cta">
+                <a class="button button-primary" href="#work">View selected work</a>
+                <a class="button button-ghost" href="https://github.com/Local-CatEnjoyer" target="_blank" rel="noopener">GitHub</a>
+            </div>
+            <div class="spectrum" aria-hidden="true" id="spectrum"></div>
 
-            <p class="small">LOCAL CAT ENJOYER</p>
-
-            <h1>Hi, I'm LCE.</h1>
-
-            <p>
-                Student, sound designer and programmer
-                interested in game development.
-            </p>
-
-            <a class="button" href="#projects">
-                View my work
-            </a>
-
+            <!-- Purely decorative sitting-cat silhouette, CSS shapes only. Hidden on small screens. -->
+            <div class="hero-cat" aria-hidden="true">
+                <div class="cat-ear left"></div>
+                <div class="cat-ear right"></div>
+                <div class="cat-head"></div>
+                <div class="cat-body"></div>
+                <div class="cat-tail"></div>
+            </div>
         </section>
 
-
-        <section id="about">
-
-            <h2>About Me</h2>
-
-            <p>
-                I'm a student interested in sound design,
-                music production, programming and games.
-            </p>
-
+        <!-- ABOUT -->
+        <section id="about" class="reveal">
+            <p class="eyebrow">01 · About</p>
+            <div class="about-grid">
+                <div class="about-text">
+                    <h2>Hi, I'm LCE.</h2>
+                    <p>LCE stands for <strong>Local Cat Enjoyer</strong> — the name I build and post under. Off the handle, I'm a student working across sound design, game audio, music production, programming and game development.</p>
+                    <p>Most of what's here started as an experiment: a boss theme for a game that didn't exist yet, an ambience patch built just to see what REAPER's stock plugins could do, a script written to fix a problem I made for myself. This site collects that work as it grows.</p>
+                </div>
+                <div class="id-card">
+                    <div class="id-row"><span class="id-label">Alias</span><span class="id-value">LCE</span></div>
+                    <div class="id-row"><span class="id-label">Means</span><span class="id-value">Local Cat Enjoyer</span></div>
+                    <div class="id-row"><span class="id-label">Focus</span><span class="id-value">Sound Design · Game Audio</span></div>
+                    <div class="id-row"><span class="id-label">DAW</span><span class="id-value">REAPER</span></div>
+                    <div class="id-row"><span class="id-label">Status</span><span class="id-value">Student, still building</span></div>
+                </div>
+            </div>
         </section>
 
+        <!-- SELECTED WORK -->
+        <section id="work" class="reveal">
+            <p class="eyebrow">02 · Selected Work</p>
+            <h2>Featured pieces</h2>
 
-        <section id="projects">
+            <div class="work-list">
 
-            <h2>Projects</h2>
-
-            <div class="projects">
-
-                <article>
-
-                    <h3>Colosseum Boss Theme</h3>
-
-                    <p>
-                        A dark metal-inspired boss theme
-                        created for a game project.
-                    </p>
-
+                <!-- EDIT ME: replace title, description, tags, and add a real <audio> element once you have a file to link -->
+                <article class="work-card">
+                    <div class="work-info">
+                        <h3>Colosseum Boss Theme</h3>
+                        <p>A dark metal-inspired boss theme, built for a game project — heavy percussion, layered guitars, and a theme that escalates as the fight does.</p>
+                        <div class="tags">
+                            <span class="tag">Boss Theme</span>
+                            <span class="tag">Dark Metal</span>
+                            <span class="tag">Game Audio</span>
+                        </div>
+                    </div>
+                    <!-- Audio player placeholder: swap data-src for a real audio file path when ready -->
+                    <div class="player" data-src="">
+                        <button class="play-btn" type="button" aria-label="Play Colosseum Boss Theme">
+                            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M8 5v14l11-7z"/></svg>
+                        </button>
+                        <div class="mini-wave" aria-hidden="true"></div>
+                        <span class="player-status">Audio coming soon</span>
+                    </div>
                 </article>
 
-
-                <article>
-
-                    <h3>Dark Knight Ambience</h3>
-
-                    <p>
-                        An atmospheric sound design
-                        experiment created in REAPER.
-                    </p>
-
+                <!-- EDIT ME: replace title, description, tags, and add a real <audio> element once you have a file to link -->
+                <article class="work-card">
+                    <div class="work-info">
+                        <h3>Dark Knight Ambience</h3>
+                        <p>An atmospheric sound-design experiment built entirely in REAPER — slow-moving drones, foley layers, and automation used to make a static scene feel alive.</p>
+                        <div class="tags">
+                            <span class="tag">Ambient</span>
+                            <span class="tag">Sound Design</span>
+                            <span class="tag">REAPER</span>
+                        </div>
+                    </div>
+                    <div class="player" data-src="">
+                        <button class="play-btn" type="button" aria-label="Play Dark Knight Ambience">
+                            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M8 5v14l11-7z"/></svg>
+                        </button>
+                        <div class="mini-wave" aria-hidden="true"></div>
+                        <span class="player-status">Audio coming soon</span>
+                    </div>
                 </article>
 
             </div>
-
         </section>
 
+        <!-- AUDIO / SOUND-DESIGN WORK AREA -->
+        <section id="audio" class="reveal">
+            <p class="eyebrow">03 · Listening Room</p>
+            <h2>Sound sketches</h2>
+            <p class="section-note">Shorter clips, one-off experiments, and works in progress — not full pieces, just ideas being tested.</p>
 
-        <section id="contact">
+            <div class="audio-grid">
+                <!-- EDIT ME: each slot is a short clip. Replace the title and add data-src once you have an audio file -->
+                <div class="audio-slot" data-src="">
+                    <button class="play-btn small" type="button" aria-label="Play sketch one">
+                        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M8 5v14l11-7z"/></svg>
+                    </button>
+                    <div>
+                        <p class="audio-title">Untitled sketch 01</p>
+                        <p class="audio-sub">Add title + clip</p>
+                    </div>
+                </div>
+                <div class="audio-slot" data-src="">
+                    <button class="play-btn small" type="button" aria-label="Play sketch two">
+                        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M8 5v14l11-7z"/></svg>
+                    </button>
+                    <div>
+                        <p class="audio-title">Untitled sketch 02</p>
+                        <p class="audio-sub">Add title + clip</p>
+                    </div>
+                </div>
+                <div class="audio-slot" data-src="">
+                    <button class="play-btn small" type="button" aria-label="Play sketch three">
+                        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M8 5v14l11-7z"/></svg>
+                    </button>
+                    <div>
+                        <p class="audio-title">Untitled sketch 03</p>
+                        <p class="audio-sub">Add title + clip</p>
+                    </div>
+                </div>
+            </div>
+        </section>
 
-            <h2>Find Me</h2>
+        <!-- TOOLS -->
+        <section id="tools" class="reveal">
+            <p class="eyebrow">04 · Tools</p>
+            <h2>What I build with</h2>
+            <div class="tool-list">
+                <span class="tool">REAPER</span>
+                <span class="tool">Vital</span>
+                <span class="tool">Java</span>
+                <span class="tool">Git</span>
+                <span class="tool">GitHub</span>
+            </div>
+        </section>
 
-            <p>
-                GitHub · Sound Design · Game Development
-            </p>
+        <!-- EXPERIMENTS -->
+        <section id="experiments" class="reveal">
+            <p class="eyebrow">05 · Experiments</p>
+            <h2>Works in progress</h2>
+            <p class="section-note">Smaller things that don't need a full write-up yet.</p>
 
+            <div class="exp-list">
+                <!-- EDIT ME: swap in real experiments as you make them -->
+                <div class="exp-row">
+                    <span class="exp-type">Audio</span>
+                    <span class="exp-name">Add your next sound experiment</span>
+                </div>
+                <div class="exp-row">
+                    <span class="exp-type">Game</span>
+                    <span class="exp-name">Add a game music or game dev project</span>
+                </div>
+                <div class="exp-row">
+                    <span class="exp-type">Code</span>
+                    <span class="exp-name">Add a code project</span>
+                </div>
+            </div>
         </section>
 
     </main>
 
-</body>
+    <!-- CONTACT -->
+    <footer id="contact">
+        <svg class="paw footer-paw" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 13.5c1.4 0 2.5 1.4 2.5 3s-1.1 3-2.5 3-2.5-1.4-2.5-3 1.1-3 2.5-3zm10 0c1.4 0 2.5 1.4 2.5 3s-1.1 3-2.5 3-2.5-1.4-2.5-3 1.1-3 2.5-3zM9 8c1.1 0 2 1.1 2 2.5S10.1 13 9 13s-2-1.1-2-2.5S7.9 8 9 8zm6 0c1.1 0 2 1.1 2 2.5S16.1 13 15 13s-2-1.1-2-2.5S13.9 8 15 8zm-3 6.2c2.5 0 5 1.7 5 4.1 0 1.5-1.3 2.4-2.9 2.1-.7-.1-1.4-.4-2.1-.4s-1.4.3-2.1.4c-1.6.3-2.9-.6-2.9-2.1 0-2.4 2.5-4.1 5-4.1z"/></svg>
+        <h2>Get in touch</h2>
+        <p>The best place to find my code and projects.</p>
+        <a class="button button-primary" href="https://github.com/Local-CatEnjoyer" target="_blank" rel="noopener">github.com/Local-CatEnjoyer</a>
+        <p class="foot-note">&copy; LCE — built by hand, no framework.</p>
+    </footer>
 
+    <script src="script.js"></script>
+</body>
 </html>
