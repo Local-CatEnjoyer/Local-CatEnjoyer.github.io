@@ -1,9 +1,4 @@
-/* ==========================================================
-   LCE portfolio — design tokens
-   Dark, cool near-black background. Teal/cyan is the primary
-   accent (sound-tech energy). Soft pink is used sparingly as
-   a second accent, never as the dominant color.
-   ========================================================== */
+/* Design tokens. Blue/purple as accents, kept off the near-black bg. */
 :root{
     --bg: #0a0e14;
     --bg-panel: #10161f;
@@ -225,8 +220,7 @@ h1{
     font-size: clamp(2.6rem, 7vw, 5rem);
     line-height: 1.04;
 }
-/* Holographic shimmer on the accent line — a nod to idol-stage
-   lighting: a cyan/pink gradient that slowly drifts across the text. */
+/* gradient text, slow drift */
 h1 span{
     background: linear-gradient(90deg, var(--blue), var(--purple), var(--blue));
     background-size: 200% auto;
@@ -294,8 +288,7 @@ h1 span{
     50%{ transform: scaleY(1); }
 }
 
-/* Sitting cat silhouette — built from plain shapes, no image assets.
-   Sits bottom-right of the hero, breathes gently, tail flicks. */
+/* cat silhouette, css shapes, bottom right of hero */
 .hero-cat{
     position: absolute;
     right: 4%;
@@ -447,7 +440,7 @@ h1 span{
     color: var(--text-dim);
 }
 
-/* Audio player placeholder */
+/* audio player */
 .player{
     display: flex;
     align-items: center;
