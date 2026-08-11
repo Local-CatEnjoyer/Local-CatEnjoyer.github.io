@@ -1,13 +1,4 @@
-/* ==========================================================
-   LCE portfolio — script.js
-   Four small, independent features. Each one is self-contained,
-   so you can read/edit them one at a time.
-   ========================================================== */
-
-/* ---------- 1. Theme switching (dark / light) ---------- */
-// The actual colors live in style.css as CSS variables — this
-// just toggles a data-theme attribute on <html> and remembers
-// the choice in localStorage so it persists on reload.
+// theme toggle — flips data-theme on <html>, remembers it in localStorage
 (function themeSwitching(){
     const root = document.documentElement;
     const toggleBtn = document.getElementById('themeToggle');
@@ -31,10 +22,7 @@
     });
 })();
 
-/* ---------- 2. Mobile navigation ---------- */
-// Below 780px, style.css hides .nav-links by default. This just
-// toggles a class to show/hide it, and closes the menu again
-// once a link is tapped.
+// mobile nav toggle
 (function mobileNav(){
     const toggle = document.getElementById('navToggle');
     const links = document.getElementById('navLinks');
@@ -52,11 +40,7 @@
     });
 })();
 
-/* ---------- 3. Scroll reveal ---------- */
-// Any element with the .reveal class starts hidden (see the CSS)
-// and fades/slides in the first time it scrolls into view.
-// IntersectionObserver does the "has this entered the viewport"
-// check without us having to listen to every scroll event.
+// fade in .reveal elements as they scroll into view
 (function scrollReveal(){
     const targets = document.querySelectorAll('.reveal');
     if(!('IntersectionObserver' in window)){
@@ -77,17 +61,8 @@
     targets.forEach(el => observer.observe(el));
 })();
 
-/* ---------- 4. Audio player placeholder interaction ---------- */
-// Every play button lives inside a container with a data-src
-// attribute. Right now data-src is empty everywhere, because
-// there's no real audio yet.
-//
-// HOW TO ADD REAL AUDIO LATER:
-// 1. Put an audio file (mp3) somewhere in your repo, e.g. /audio/colosseum-boss-theme.mp3
-// 2. Set data-src="audio/colosseum-boss-theme.mp3" on that .player or .audio-slot element
-// 3. That's it — this script will automatically play/pause it
-//    instead of showing "Audio coming soon".
-(function audioPlaceholders(){
+// play/pause for each track, using data-src on the container
+(function audioPlayers(){
     const containers = document.querySelectorAll('.player, .audio-slot');
     let currentAudio = null;
     let currentBtn = null;
@@ -141,11 +116,7 @@
     });
 })();
 
-/* ---------- Paw-print cursor trail (hero only) ---------- */
-// A small, playful touch: moving the mouse across the hero leaves
-// a couple of tiny fading paw prints behind. Throttled so it's a
-// light trail, not a mess, and skipped entirely on touch devices
-// or when the visitor has motion reduced.
+// paw print trail on mouse move, hero only
 (function pawTrail(){
     const hero = document.querySelector('.hero');
     if(!hero) return;
@@ -172,8 +143,7 @@
     });
 })();
 
-/* ---------- Spectrum analyzer bars (hero decoration) ---------- */
-// Purely visual — builds the animated bars next to the hero CTA.
+// builds the animated spectrum bars in the hero
 (function buildSpectrum(){
     const spectrum = document.getElementById('spectrum');
     if(!spectrum) return;
