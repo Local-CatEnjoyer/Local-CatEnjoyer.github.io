@@ -417,6 +417,19 @@ h1 span{
     border-color: var(--border-strong);
     box-shadow: 0 0 40px -12px var(--blue-glow);
 }
+
+/* ---------- GAME TRACKS ---------- */
+.game-group + .game-group{ margin-top: 44px; }
+.game-title{
+    font-family: var(--mono);
+    font-size: 0.82rem;
+    letter-spacing: 0.06em;
+    color: var(--purple);
+    text-transform: uppercase;
+    margin-bottom: 16px;
+    padding-bottom: 10px;
+    border-bottom: 1px solid var(--border);
+}
 .work-info h3{
     font-family: var(--display);
     font-size: 1.25rem;
@@ -459,6 +472,10 @@ h1 span{
     transition: transform .15s ease;
 }
 .play-btn:hover{ transform: scale(1.06); }
+.play-btn.is-playing{
+    background: var(--purple);
+    box-shadow: 0 0 16px var(--purple-glow);
+}
 .play-btn svg{ width: 16px; height: 16px; fill: currentColor; }
 .play-btn.small{ width: 34px; height: 34px; }
 .play-btn.small svg{ width: 13px; height: 13px; }
@@ -504,6 +521,15 @@ h1 span{
     background: var(--bg-panel);
     border: 1px solid var(--border);
     border-left: 2px solid var(--blue);
+    text-decoration: none;
+    color: var(--text);
+    transition: border-color .15s ease, transform .15s ease, background .15s ease;
+}
+.tool:hover{
+    border-color: var(--border-strong);
+    border-left-color: var(--purple);
+    background: var(--bg-panel-2);
+    transform: translateY(-2px);
 }
 
 /* ---------- EXPERIMENTS ---------- */
