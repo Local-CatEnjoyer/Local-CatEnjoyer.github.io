@@ -91,15 +91,16 @@
     const containers = document.querySelectorAll('.player, .audio-slot');
     let currentAudio = null;
     let currentBtn = null;
+    let currentStatus = null;
 
     containers.forEach(container => {
         const btn = container.querySelector('.play-btn');
+        const status = container.querySelector('.player-status');
         const src = container.dataset.src;
 
         btn.addEventListener('click', () => {
             if(!src){
                 // No audio linked yet — just give a small visual nudge.
-                const status = container.querySelector('.player-status');
                 if(status){
                     const original = status.textContent;
                     status.textContent = 'No audio linked yet';
@@ -112,12 +113,14 @@
             if(currentAudio && currentAudio.src.indexOf(src) === -1){
                 currentAudio.pause();
                 currentBtn.classList.remove('is-playing');
+                if(currentStatus) currentStatus.textContent = 'Play';
             }
 
             if(!container._audioEl){
                 container._audioEl = new Audio(src);
                 container._audioEl.addEventListener('ended', () => {
                     btn.classList.remove('is-playing');
+                    if(status) status.textContent = 'Play';
                 });
             }
 
@@ -125,11 +128,14 @@
             if(audio.paused){
                 audio.play();
                 btn.classList.add('is-playing');
+                if(status) status.textContent = 'Playing';
                 currentAudio = audio;
                 currentBtn = btn;
+                currentStatus = status;
             } else {
                 audio.pause();
                 btn.classList.remove('is-playing');
+                if(status) status.textContent = 'Play';
             }
         });
     });
