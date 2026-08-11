@@ -18,11 +18,11 @@
     --purple: #a56bff;
     --purple-glow: rgba(165,107,255,0.4);
 
-    --display: 'Chakra Petch', sans-serif;
+    --display: 'Space Grotesk', sans-serif;
     --body: 'Inter', sans-serif;
     --mono: 'JetBrains Mono', monospace;
 
-    --radius: 14px;
+    --radius: 12px;
     --radius-sm: 8px;
 }
 
@@ -198,7 +198,26 @@ html[data-theme="light"] .theme-toggle .icon-sun{ display: block; }
     font-size: 0.8rem;
     letter-spacing: 0.14em;
     color: var(--text-dim);
-    margin-bottom: 18px;
+    margin-bottom: 14px;
+}
+.status-pill{
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    font-family: var(--mono);
+    font-size: 0.76rem;
+    color: var(--text-dim);
+    border: 1px solid var(--border-strong);
+    border-radius: 100px;
+    padding: 6px 14px 6px 10px;
+    margin-bottom: 26px;
+    width: fit-content;
+}
+.status-dot{
+    width: 7px; height: 7px;
+    border-radius: 50%;
+    background: var(--blue);
+    box-shadow: 0 0 8px var(--blue-glow);
 }
 h1{
     font-family: var(--display);
@@ -283,7 +302,7 @@ h1 span{
     bottom: 6%;
     width: 84px;
     height: 90px;
-    opacity: 0.16;
+    opacity: 0.11;
     pointer-events: none;
     display: none;
 }
@@ -336,10 +355,10 @@ h1 span{
 /* Paw prints spawned by the mousemove trail in script.js */
 .paw-print{
     position: absolute;
-    width: 10px; height: 10px;
+    width: 8px; height: 8px;
     background: var(--blue);
     border-radius: 50%;
-    opacity: 0.5;
+    opacity: 0.35;
     pointer-events: none;
     transform: translate(-50%, -50%) scale(1);
     animation: paw-fade 0.9s ease-out forwards;
