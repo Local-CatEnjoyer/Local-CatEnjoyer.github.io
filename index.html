@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>LCE | Local Cat Enjoyer</title>
+    <link rel="icon" type="image/svg+xml" href="favicon.svg">
     <meta name="description" content="LCE — student working in sound design, game audio, music production, programming and game development.">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -32,6 +33,7 @@
             <a href="#audio">Audio</a>
             <a href="#tools">Tools</a>
             <a href="#experiments">Experiments</a>
+            <a href="#connections">Connections</a>
             <a href="#contact">Contact</a>
             <button class="theme-toggle" id="themeToggle" aria-label="Switch to light theme">
                 <svg class="icon-moon" viewBox="0 0 24 24" aria-hidden="true"><path d="M21 12.8A9 9 0 1 1 11.2 3a7 7 0 0 0 9.8 9.8z"/></svg>
@@ -71,14 +73,17 @@
                 <div class="about-text">
                     <h2>Hi, I'm LCE.</h2>
                     <p>LCE stands for <strong>Local Cat Enjoyer</strong> — the name I build and post under. Off the handle, I'm a student working across sound design, game audio, music production, programming and game development.</p>
+                    <p>I'm 16, and still very much a beginner — learning REAPER, learning to actually finish tracks, one project at a time. Outside of building things, I'm big into gaming, and I probably spend as much time watching gaming content and listening to music as I do making it.</p>
                     <p>Most of what's here started as an experiment: a boss theme for a game that didn't exist yet, an ambience patch built just to see what REAPER's stock plugins could do, a script written to fix a problem I made for myself. This site collects that work as it grows.</p>
                 </div>
                 <div class="id-card">
                     <div class="id-row"><span class="id-label">Alias</span><span class="id-value">LCE</span></div>
                     <div class="id-row"><span class="id-label">Means</span><span class="id-value">Local Cat Enjoyer</span></div>
+                    <div class="id-row"><span class="id-label">Age</span><span class="id-value">16</span></div>
                     <div class="id-row"><span class="id-label">Focus</span><span class="id-value">Sound Design · Game Audio</span></div>
+                    <div class="id-row"><span class="id-label">Interests</span><span class="id-value">Gaming · Music</span></div>
                     <div class="id-row"><span class="id-label">DAW</span><span class="id-value">REAPER</span></div>
-                    <div class="id-row"><span class="id-label">Status</span><span class="id-value">Student, still building</span></div>
+                    <div class="id-row"><span class="id-label">Status</span><span class="id-value">Beginner, still building</span></div>
                 </div>
             </div>
         </section>
@@ -142,7 +147,7 @@
             <h2>Music &amp; sound for games</h2>
 
             <div class="game-group">
-                <h3 class="game-title">Demon's Web</h3>
+                <h3 class="game-title">Untitled indie project</h3>
 
                 <div class="work-list">
 
@@ -150,10 +155,10 @@
                     <article class="work-card">
                         <div class="work-info">
                             <h3>Ambience I</h3>
-                            <p>An early ambience pass for Demon's Web — establishing the base atmosphere before other layers get built on top.</p>
+                            <p>An early ambience pass for an indie game project — establishing the base atmosphere before other layers get built on top.</p>
                             <div class="tags">
                                 <span class="tag">Ambience</span>
-                                <span class="tag">Demon's Web</span>
+                                <span class="tag">Game Audio</span>
                                 <span class="tag">REAPER</span>
                             </div>
                         </div>
@@ -170,10 +175,10 @@
                     <article class="work-card">
                         <div class="work-info">
                             <h3>Dark Ambience</h3>
-                            <p>A darker, heavier ambience variant for Demon's Web — used for tenser moments than the base atmosphere.</p>
+                            <p>A darker, heavier ambience variant for the same project — used for tenser moments than the base atmosphere.</p>
                             <div class="tags">
                                 <span class="tag">Ambience</span>
-                                <span class="tag">Demon's Web</span>
+                                <span class="tag">Game Audio</span>
                                 <span class="tag">REAPER</span>
                             </div>
                         </div>
@@ -196,35 +201,9 @@
             <h2>Sound sketches</h2>
             <p class="section-note">Shorter clips, one-off experiments, and works in progress — not full pieces, just ideas being tested.</p>
 
-            <div class="audio-grid">
-                <!-- EDIT ME: each slot is a short clip. Replace the title and add data-src once you have an audio file -->
-                <div class="audio-slot" data-src="">
-                    <button class="play-btn small" type="button" aria-label="Play sketch one">
-                        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M8 5v14l11-7z"/></svg>
-                    </button>
-                    <div>
-                        <p class="audio-title">Untitled sketch 01</p>
-                        <p class="audio-sub">Add title + clip</p>
-                    </div>
-                </div>
-                <div class="audio-slot" data-src="">
-                    <button class="play-btn small" type="button" aria-label="Play sketch two">
-                        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M8 5v14l11-7z"/></svg>
-                    </button>
-                    <div>
-                        <p class="audio-title">Untitled sketch 02</p>
-                        <p class="audio-sub">Add title + clip</p>
-                    </div>
-                </div>
-                <div class="audio-slot" data-src="">
-                    <button class="play-btn small" type="button" aria-label="Play sketch three">
-                        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M8 5v14l11-7z"/></svg>
-                    </button>
-                    <div>
-                        <p class="audio-title">Untitled sketch 03</p>
-                        <p class="audio-sub">Add title + clip</p>
-                    </div>
-                </div>
+            <div class="audio-grid" id="audioGrid">
+                <!-- EDIT ME: once you have real clips, add .audio-slot entries here
+                     (see git history / earlier version for the markup pattern). -->
             </div>
         </section>
 
@@ -261,6 +240,18 @@
                     <span class="exp-type">Code</span>
                     <span class="exp-name">Add a code project</span>
                 </div>
+            </div>
+        </section>
+
+        <!-- CONNECTIONS -->
+        <section id="connections" class="reveal">
+            <p class="eyebrow">07 · Connections</p>
+            <h2>Find me elsewhere</h2>
+            <div class="tool-list">
+                <a class="tool" href="https://instagram.com/ayushman98_" target="_blank" rel="noopener">Instagram</a>
+                <a class="tool" href="https://reddit.com/user/Expensive_Picture159" target="_blank" rel="noopener">Reddit</a>
+                <a class="tool" href="https://x.com/LocaICatEnjoyer" target="_blank" rel="noopener">Twitter / X</a>
+                <span class="tool tool-static">Discord — ayushman98_</span>
             </div>
         </section>
 
