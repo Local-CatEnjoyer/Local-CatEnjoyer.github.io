@@ -148,7 +148,7 @@
     if(prefersReducedMotion || isTouch) return;
 
     let lastStamp = 0;
-    const minGap = 260; // ms between prints, keeps the trail sparse
+    const minGap = 420; // ms between prints — sparse and restrained, not a gimmick
 
     hero.addEventListener('mousemove', (e) => {
         const now = Date.now();
