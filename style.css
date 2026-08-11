@@ -531,6 +531,16 @@ h1 span{
     background: var(--bg-panel-2);
     transform: translateY(-2px);
 }
+.tool-static{
+    cursor: default;
+    color: var(--text-dim);
+}
+.tool-static:hover{
+    border-color: var(--border);
+    border-left-color: var(--blue);
+    background: var(--bg-panel);
+    transform: none;
+}
 
 /* ---------- EXPERIMENTS ---------- */
 .exp-list{ display: flex; flex-direction: column; }
