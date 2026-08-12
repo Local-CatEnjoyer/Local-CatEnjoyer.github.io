@@ -63,7 +63,7 @@
 
 // play/pause for each track, using data-src on the container
 (function audioPlayers(){
-    const containers = document.querySelectorAll('.player, .audio-slot');
+    const containers = document.querySelectorAll('.player');
     let currentAudio = null;
     let currentBtn = null;
     let currentStatus = null;
