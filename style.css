@@ -486,24 +486,6 @@ h1 span{
     white-space: nowrap;
 }
 
-/* ---------- AUDIO / LISTENING ROOM ---------- */
-.audio-grid{
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 16px;
-}
-.audio-slot{
-    display: flex;
-    align-items: center;
-    gap: 14px;
-    background: var(--bg-panel);
-    border: 1px solid var(--border);
-    border-radius: var(--radius-sm);
-    padding: 16px;
-}
-.audio-title{ font-size: 0.92rem; font-weight: 500; }
-.audio-sub{ font-family: var(--mono); font-size: 0.72rem; color: var(--text-dim); margin-top: 3px; }
-
 /* ---------- TOOLS ---------- */
 .tool-list{ display: flex; flex-wrap: wrap; gap: 10px; }
 .tool{
@@ -619,6 +601,5 @@ footer > p{ color: var(--text-dim); margin-bottom: 28px; }
     .about-grid{ grid-template-columns: 1fr; }
     .work-card{ grid-template-columns: 1fr; }
     .player{ width: 100%; }
-    .audio-grid{ grid-template-columns: 1fr; }
     section{ padding: 70px 0; }
 }
