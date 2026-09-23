@@ -93,26 +93,45 @@
 
             if(!container._audioEl){
                 container._audioEl = new Audio(src);
+                container._audioEl.preload = 'metadata';
                 container._audioEl.addEventListener('ended', () => {
                     btn.classList.remove('is-playing');
                     if(status) status.textContent = 'Play';
+                });
+                container._audioEl.addEventListener('error', () => {
+                    btn.classList.remove('is-playing');
+                    if(status) status.textContent = 'Could not load';
                 });
             }
 
             const audio = container._audioEl;
             if(audio.paused){
-                audio.play();
-                btn.classList.add('is-playing');
-                if(status) status.textContent = 'Playing';
-                currentAudio = audio;
-                currentBtn = btn;
-                currentStatus = status;
+                audio.play().then(() => {
+                    btn.classList.add('is-playing');
+                    if(status) status.textContent = 'Playing';
+                    currentAudio = audio;
+                    currentBtn = btn;
+                    currentStatus = status;
+                }).catch(() => {
+                    if(status) status.textContent = 'Could not play';
+                });
             } else {
                 audio.pause();
                 btn.classList.remove('is-playing');
                 if(status) status.textContent = 'Play';
             }
         });
+    });
+})();
+
+// builds a lightweight decorative waveform inside every player
+(function buildMiniWaves(){
+    document.querySelectorAll('.mini-wave').forEach((wave, waveIndex) => {
+        for(let i = 0; i < 18; i++){
+            const bar = document.createElement('span');
+            bar.style.height = (30 + ((i * 17 + waveIndex * 11) % 62)) + '%';
+            wave.appendChild(bar);
+        }
     });
 })();
 
